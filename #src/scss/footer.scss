@@ -1,0 +1,124 @@
+.footer {
+
+    &__body {
+        display: flex;
+        @media (max-width:$md3+px) {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        flex: 0 1 73%;
+        @media (max-width:$md3+px) {
+            order: 1;
+            &_narrow {
+                order: 2;
+            }
+        }
+        &_narrow {  
+            flex: 0 1 27%;
+        }
+    }
+
+    &__navigation {
+    }
+
+    &__content {
+
+    }
+}
+
+.navigation-footer {
+    background-color: #000;
+    padding-bottom: 45px;
+    @include responsive-size(padding-top, 115, 45, $maxWidthContainer);
+    @include responsive-size(padding-left, 26, 15, $maxWidthContainer);
+    @include responsive-size(padding-right, 26, 15, $maxWidthContainer);
+
+    &__content {
+    }
+
+    &__title {
+        font-family: $fontBold;
+        @include responsive-size(font-size, 60, 40, $maxWidthContainer);
+        @include responsive-size(margin-bottom, 52, 20, $maxWidthContainer);
+        line-height: 1.2;
+        letter-spacing: -0.05em;
+        color: #ffffff;
+        span {
+            color: #ffc600;
+        }
+    }
+
+    &__menu {
+    }
+
+    &__links {
+    }
+
+    &__link {
+    }
+}
+
+.menu-footer {
+    display: inline-block;
+    @include responsive-size(padding-bottom, 47, 20, $maxWidthContainer);
+    border-bottom: 2px solid #ffc600;
+    margin-bottom: 14px;
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 22px;
+            }
+        }
+    }
+
+    &__link {
+        font-family: $fontSemiBold;
+        font-size: 16px;
+        color: #ffffff;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: #ffc600;
+            }
+        }
+    }
+}
+
+.content-footer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        @include responsive-size(margin-bottom, 144, 70, $maxWidthContainer);
+        margin-left: 25px;
+        margin-right: 15px;
+        @media (max-width:$md3+px) {
+            margin-left: 15px;
+            @include responsive-size(margin-top, 144, 70, $maxWidthContainer);
+        }
+    }
+
+    &__text {
+        font-family: $fontBold;
+        line-height: 0.8;
+        letter-spacing: -0.05em;
+        color: #ffffff;
+        @include responsive-size(font-size, 111, 40, $maxWidthContainer);
+        span {
+            color: #ffc600;
+        }
+    }
+}

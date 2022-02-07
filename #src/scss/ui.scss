@@ -1,0 +1,163 @@
+.title {
+    display: inline-block;
+    font-size: 30px;
+    font-family: $fontSemiBold;
+    color: #000000;
+    position: relative;
+    &_white {
+        color: #fff;
+    }
+    &_line {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 133px;
+            height: 1px;
+            background-color: #595959;
+        }
+        &_white {
+            &::before {
+                background-color: #fff;
+            }
+        }
+        &_small {
+            &::before {
+                width: 84px;
+            }
+        }
+    }
+
+    span {
+        font-size: 50px;
+        &.sp-yellow  {
+            color: #ffc600;
+        }
+    }
+
+    &_big {
+        @include responsive-size(font-size, 80, 60, $maxWidthContainer);
+        span {
+            @include responsive-size(font-size, 80, 60, $maxWidthContainer);
+        }
+    }
+}
+
+.small-title {
+    font-family: $fontItalic;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 15px;
+    &_white {
+        color: #ffffff;
+    }
+}
+
+.text {
+    font-size: 14px;
+    color: #595959;
+    line-height: 1.2;
+    &_white {
+        color: #ffffff;
+    }
+}
+
+.name-text {
+    font-family: $fontSemiBold;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000000;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_white {
+        color: #fff;
+    }
+}
+
+.job-text {
+    font-family: $fontItalic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    &_white {
+        color: #fff;
+    }
+}
+
+.socials-links {
+    &__link {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        border: 1px solid #fff;
+        transition: all 0.3s ease 0s;
+        &:not(:last-child) {
+            margin-right: 3px;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #2046b3;
+                &::before {
+                    color: #fff;
+                }
+            }
+        }
+        &::before {
+            font-size: 13px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #2046b3;
+        }
+        &_dark {
+            &::before {
+                color: #000;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}
+
+
+._ibg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    img{
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+body.ie{
+    ._ibg{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    ._ibg img{
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
